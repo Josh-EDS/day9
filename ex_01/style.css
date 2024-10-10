@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    font-family: Roboto, serif;
+}
+
+form {
+    margin: auto;
+    display: flex;
+    width: 400px;
+}
+
+.input-field {
+    position: relative;
+    width: 250px;
+    height: 44px;
+    line-height: 44px;
+    margin: auto;
+}
+
+label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #d3d3d3; /* Default gray color */
+    cursor: text;
+    transition: all 0.3s ease;
+}
+
+input {
+    width: 100%;
+    border: 0;
+    outline: none;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid #d3d3d3;
+    box-shadow: none;
+    color: #111;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-bottom: 2px solid green; /* Green border when focused */
+}
+
+input:focus + label {
+    color: green; /* Change label color to green when focused */
+    line-height: 15px;
+    transform: translateY(-20px);
+    font-size: 12px;
+}
+
+input:not(:placeholder-shown) + label {
+    font-size: 12px; /* Adjust label size */
+    color: #d3d3d3; /* Keep label gray if input is not empty */
+}
+
+/* Ensure label stays gray until input is focused */
+input:valid:focus + label {
+    color: green; /* Only change label color to green when focused and valid */
+}
